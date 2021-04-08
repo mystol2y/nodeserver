@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7044d26e-e221-421b-a94d-eaa3d4bbd50c" name="test" url="http://207.148.79.76">
+        <fileTransfer rootFolder="/socket.crm-flow.com" host="207.148.79.76" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
