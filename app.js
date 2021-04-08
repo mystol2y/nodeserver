@@ -48,7 +48,7 @@ app.use(function(req, res, next) {
 
 var clients = 0;
 users = [];
-io.on('connection', function(socket) {
+io.on('connection', async function(socket) {
     socket.emit('connected', socket.id);
     socket.on('join', (room) => {
         socket.join(room);
@@ -57,11 +57,11 @@ io.on('connection', function(socket) {
     let guest;
     let user_id;
     let current_credit;
-    let vat_games;
+    let vat_games = 5;
     let credit;
-    con.query("SELECT * FROM vat_games", (err, res) => {
-        vat_games = res[0].vat_percen;
-    });
+    // con.query("SELECT * FROM vat_games", (err, res) => {
+    //     vat_games = await res[0].vat_percen;
+    // });
     io.sockets.emit('broadcast', { message: clients + ' Client connected' });
     //console.log('connected');
     // ------------------------------------------------------------------------------------------------------------
