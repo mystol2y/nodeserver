@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const con = mysql.createPool({
     host: 'localhost',
     user: 'huayhub',
-    password: 'Oa0c4!g8',
+    password: 'Pk^3z4g2',
     database: 'huayhub'
 });
 
@@ -30,7 +30,7 @@ con.getConnection((err, connection) => {
 
 const io = require("socket.io")(http, {
     cors: {
-        origin: "*",
+        origin: "https://huay999.vip",
         methods: ["GET", "POST"],
     }
 });
