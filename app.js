@@ -60,7 +60,7 @@ io.on('connection', async function(socket) {
     let vat_games;
     let credit;
     con.query("SELECT * FROM vat_games", (err, res) => {
-        vat_games = await res[0].vat_percen;
+        vat_games = res[0].vat_percen;
     });
     io.sockets.emit('broadcast', { message: clients + ' Client connected' });
     //console.log('connected');
