@@ -677,23 +677,25 @@ io.on('connection', async function(socket) {
             if (data.type == 'all') {
                 con.query("SELECT * FROM high_low_log WHERE  status= 1 and user_id != " + data.user_id + " order by created_date asc limit 0 ," + data.maxpage, (err, res) => {
                     let game_list = [];
-                    for (let i = 0; i < res.length; i++) {
-                        let today = new Date(res[i].date_end);
-                        let host_bet = res[i].user_Choice.split("");
-                        let hi_lo = parseInt(host_bet[0]) + parseInt(host_bet[1]) + parseInt(host_bet[2]);
-                        if (hi_lo > 10) {
-                            host_bet[3] = numTochar(1);
-                        } else {
-                            host_bet[3] = numTochar(2);
+                    if (res) {
+                        for (let i = 0; i < res.length; i++) {
+                            let today = new Date(res[i].date_end);
+                            let host_bet = res[i].user_Choice.split("");
+                            let hi_lo = parseInt(host_bet[0]) + parseInt(host_bet[1]) + parseInt(host_bet[2]);
+                            if (hi_lo > 10) {
+                                host_bet[3] = numTochar(1);
+                            } else {
+                                host_bet[3] = numTochar(2);
+                            }
+                            game_list.push({
+                                id: res[i].id,
+                                user_name: res[i].user_name,
+                                user_id: res[i].user_id,
+                                bet: res[i].bet,
+                                timeset: today.getTime(),
+                                created_date: res[i].created_date
+                            });
                         }
-                        game_list.push({
-                            id: res[i].id,
-                            user_name: res[i].user_name,
-                            user_id: res[i].user_id,
-                            bet: res[i].bet,
-                            timeset: today.getTime(),
-                            created_date: res[i].created_date
-                        });
                     }
                     let new_rc = '';
                     let new_mrc = '';
