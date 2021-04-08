@@ -4,10 +4,10 @@ const util = require('util');
 const mysql = require('mysql');
 const PORT = process.env.PORT || 3000;
 const con = mysql.createPool({
-    host: '128.199.119.104',
+    host: '207.148.79.76',
     port: 3306,
     user: 'huayhub',
-    password: 'Pk^3z4g2',
+    password: 'Oa0c4!g8',
     database: 'huayhub'
 });
 // app.get("/", (req, res) => {
