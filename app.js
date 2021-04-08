@@ -39,7 +39,6 @@ const io = require("socket.io")(http, {
         methods: ["GET", "POST"],
     }
 });
-const io = require("socket.io")(http);
 
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*",
