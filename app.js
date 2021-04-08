@@ -40,9 +40,7 @@ const io = require("socket.io")(http, {
     }
 });
 const io = require("socket.io")(http);
-app.get('/', function(req, res) {
-    res.sendfile('index.html');
-});
+
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*",
         'Content-Type', 'text/plain');
