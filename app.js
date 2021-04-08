@@ -1638,6 +1638,6 @@ function numTochar_yingchub(num) {
     return choice;
 }
 
-http.listen(3000, function() {
-    console.log('start server on port :3000');
+http.listen(PORT, function() {
+    console.log('start server on port :' + PORT);
 });
