@@ -10,12 +10,12 @@ const con = mysql.createPool({
     password: 'Pk^3z4g2',
     database: 'huayhub'
 });
-app.get("/", (req, res) => {
-    res.json({
-        result: "ok",
-        data: [1, 2]
-    })
-});
+// app.get("/", (req, res) => {
+//     res.json({
+//         result: "ok",
+//         data: [1, 2]
+//     })
+// });
 con.getConnection((err, connection) => {
     if (err) {
         if (err.code === 'PROTOCOL_CONNECTION_LOST') {
@@ -36,7 +36,7 @@ con.getConnection((err, connection) => {
 
 const io = require("socket.io")(http, {
     cors: {
-        origin: "https://huay999.vip",
+        origin: "https://huayhub.vip",
         methods: ["GET", "POST"],
     }
 });
