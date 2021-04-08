@@ -1,22 +1,31 @@
 {
-    "name": "chatapp",
+    "name": "nodeserver",
     "version": "1.0.0",
-    "description": "test",
+    "description": "",
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node app.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mystol2y/nodeserver.git"
+    },
+    "keywords": [],
     "author": "",
     "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mystol2y/nodeserver/issues"
+    },
+    "homepage": "https://github.com/mystol2y/nodeserver#readme",
+    "engines": {
+        "node": "14.15.1",
+        "npm": "6.14.8"
+    },
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "mysql": "^2.18.1",
-        "socket.io": "^3.0.5"
-    },
-    "engines": {
-        "node": "14.15.1",
-        "npm": "6.14.8"
+        "socket.io": "^4.0.1"
     }
 }
