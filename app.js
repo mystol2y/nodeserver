@@ -9,12 +9,6 @@ const con = mysql.createPool({
     password: 'Pk^3z4g2',
     database: 'huayhub'
 });
-app.get("/", (req, res) => {
-    res.json({
-        result: "ok",
-        data: [1, 2]
-    })
-});
 con.getConnection((err, connection) => {
     if (err) {
         if (err.code === 'PROTOCOL_CONNECTION_LOST') {
